@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKTHISELVAN P | DESIGN ENGINEER</title>
+    <meta name="description" content="Portfolio of Sakthiselvan P, Design Engineer.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">SP<span>.</span></a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <canvas id="canvas3d"></canvas>
+        <div class="hero-bg"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="greeting hidden-text">Hello, I'm</p>
+                <h1 class="name hidden-text">Sakthiselvan P</h1>
+                <h2 class="designation hidden-text">BE. Mechanical</h2>
+                <div class="aspiration-box hidden-text">
+                    <span class="line"></span>
+                    <h3 class="aspiration">Design Engineer</h3>
+                    <span class="line"></span>
+                </div>
+                <div class="hero-cta hidden-text">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image hidden-img">
+                <div class="img-wrapper">
+                    <img src="profile.jpeg" alt="Sakthiselvan P">
+                    <div class="img-backdrop"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header hidden-item">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Tools & Technologies I Master</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-card hidden-item">
+                    <div class="icon-box">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Office</h3>
+                    <p>Profiecient in Word, Excel, and PowerPoint for documentation and analysis.</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-card hidden-item">
+                    <div class="icon-box">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>SolidWorks</h3>
+                    <p>3D Modeling, Assembly, and Simulation handling complex mechanical designs.</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-card hidden-item">
+                    <div class="icon-box">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>AutoCAD</h3>
+                    <p>2D Drafting and Layout design with precision and industry standards.</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-card hidden-item">
+                    <div class="icon-box">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>HyperMesh</h3>
+                    <p>Finite Element Analysis (FEA) pre-processing and mesh generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header hidden-item">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Engineering Solutions & Innovation</p>
+            </div>
+
+            <div class="projects-wrapper">
+                <!-- Mini Project -->
+                <div class="project-card hidden-item">
+                    <div class="project-content">
+                        <div class="project-label">Mini Project</div>
+                        <h3>IoT Based Energy Smart Light System</h3>
+                        <p>An intelligent lighting solution that optimizes energy consumption using IoT sensors. The
+                            system automatically adjusts brightness based on ambient light and occupancy, leading to
+                            significant energy savings.</p>
+                        <div class="tech-stack">
+                            <span>IoT</span>
+                            <span>Sensors</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="img-wrapper-project">
+                            <img src="iot.jpg" alt="IoT Smart Light System">
+                            <div class="img-backdrop"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Project -->
+                <div class="project-card hidden-item">
+                    <div class="project-content">
+                        <div class="project-label">Main Project</div>
+                        <h3>Mechanical Property Analysis of MIG and TIG Welding</h3>
+                        <p>A comparative analysis using AL6061 base metal and ER4043 filler material to evaluate
+                            mechanical properties and joint strength.</p>
+                        <div class="tech-stack">
+                            <span>Manufacturing</span>
+                            <span>Welding</span>
+                            <span>process Optimization</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="img-wrapper-project">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop"
+                                alt="Advanced Welding Techniques">
+                            <div class="img-backdrop"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper hidden-item">
+                <div class="contact-info">
+                    <h2>Let's Work Together</h2>
+                    <p>I am looking for opportunities to apply my design engineering skills. Feel free to reach out.</p>
+
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="details">
+                            <span>Call Me</span>
+                            <a href="tel:+918608344289">+91 86083 44289</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="details">
+                            <span>Email Me</span>
+                            <a href="mailto:sakthiselvan05@gmail.com">sakthiselvan05@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="details">
+                            <span>LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/sakthiselvan-p-b347082a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="details">
+                            <span>WhatsApp</span>
+                            <a href="https://wa.me/qr/J2O64GWBOF45J1" target="_blank">Chat with Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Sakthiselvan P. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sakthiselvan-p-b347082a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
