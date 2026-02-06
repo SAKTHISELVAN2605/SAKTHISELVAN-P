@@ -248,6 +248,45 @@
         </div>
     </footer>
 
+    <!-- AI Chat Assistant -->
+    <div class="ai-chat-widget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Open Chat">
+            <i class="fas fa-robot"></i>
+            <span class="pulse"></span>
+        </button>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div class="header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>SP Assistant</h4>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <button class="btn-close" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai">
+                    <div class="bubble">
+                        Hello! I'm Sakthiselvan's AI assistant. Ask me anything about his projects, skills, or
+                        experience!
+                    </div>
+                </div>
+            </div>
+
+            <form class="chat-input-area" id="chatForm">
+                <input type="text" id="chatInput" placeholder="Ask me something..." autocomplete="off">
+                <button type="submit" class="btn-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

@@ -158,3 +158,147 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden-text, .hidden-img, .hidden-item');
 hiddenElements.forEach((el) => observer.observe(el));
+
+// --- AI Chat Assistant Logic ---
+const chatToggle = document.getElementById('chatToggle');
+const chatContainer = document.getElementById('chatContainer');
+const closeChat = document.getElementById('closeChat');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatMessages = document.getElementById('chatMessages');
+
+// Internal Knowledge Base
+const internalData = {
+    personal: {
+        name: "Sakthiselvan P",
+        designation: "Design Engineer",
+        education: "BE. Mechanical",
+        location: "Tamil Nadu, India",
+        bio: "Dedicated Design Engineer with expertise in mechanical design, 3D modeling, and engineering analysis."
+    },
+    skills: [
+        "Microsoft Office (Word, Excel, PowerPoint)",
+        "SolidWorks (3D Modeling, Assembly, Simulation)",
+        "AutoCAD (2D Drafting, Layout Design)",
+        "HyperMesh (FEA pre-processing, Mesh generation)"
+    ],
+    projects: [
+        {
+            title: "IoT Based Energy Smart Light System",
+            type: "Mini Project",
+            description: "An intelligent lighting solution optimizing energy consumption using IoT sensors and automation.",
+            tech: ["IoT", "Sensors", "Automation"]
+        },
+        {
+            title: "Mechanical Property Analysis of MIG and TIG Welding",
+            type: "Main Project",
+            description: "Comparative analysis using AL6061 base metal and ER4043 filler material to evaluate joint strength.",
+            tech: ["Manufacturing", "Welding", "Process Optimization"]
+        }
+    ],
+    contact: {
+        phone: "+91 86083 44289",
+        email: "sakthiselvan05@gmail.com",
+        linkedin: "https://www.linkedin.com/in/sakthiselvan-p-b347082a5",
+        whatsapp: "https://wa.me/qr/J2O64GWBOF45J1"
+    }
+};
+
+// Toggle Chat
+chatToggle.addEventListener('click', () => {
+    chatContainer.classList.add('active');
+    chatInput.focus();
+});
+
+closeChat.addEventListener('click', () => {
+    chatContainer.classList.remove('active');
+});
+
+// Handle User Message
+chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    addMessage(message, 'user');
+    chatInput.value = '';
+    
+    // Simulate AI Thinking
+    showTypingIndicator();
+    setTimeout(() => {
+        removeTypingIndicator();
+        const response = generateAIResponse(message.toLowerCase());
+        addMessage(response, 'ai');
+    }, 1000);
+});
+
+function addMessage(text, sender) {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('message', sender);
+    msgDiv.innerHTML = `<div class="bubble">${text}</div>`;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.classList.add('typing-indicator', 'ai');
+    indicator.id = 'typingIndicator';
+    indicator.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(indicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
+
+function generateAIResponse(input) {
+    // Skills
+    if (input.includes('skill') || input.includes('tool') || input.includes('software')) {
+        return `Sakthiselvan is proficient in several engineering tools:<br><br><ul>${internalData.skills.map(s => `<li>${s}</li>`).join('')}</ul>`;
+    }
+    
+    // Projects
+    if (input.includes('project') || input.includes('work')) {
+        let resp = "Here are Sakthiselvan's key projects:<br><br>";
+        internalData.projects.forEach(p => {
+            resp += `<strong>${p.title}</strong> (${p.type}):<br>${p.description}<br><em>Tech: ${p.tech.join(', ')}</em><br><br>`;
+        });
+        return resp;
+    }
+
+    // IoT Project Specifically
+    if (input.includes('iot') || input.includes('light')) {
+        const p = internalData.projects[0];
+        return `<strong>${p.title}</strong>:<br>${p.description}<br><br>Features: Automation, Ambient light adjustment, and Energy optimization.`;
+    }
+
+    // Welding Project Specifically
+    if (input.includes('welding') || input.includes('mig') || input.includes('tig')) {
+        const p = internalData.projects[1];
+        return `<strong>${p.title}</strong>:<br>${p.description}<br><br>This project comparative evaluation of joint strength using AL6061 and ER4043 material.`;
+    }
+
+    // Contact
+    if (input.includes('contact') || input.includes('email') || input.includes('phone') || input.includes('reach')) {
+        return `You can reach Sakthiselvan via:<br><br>
+                📞 Phone: <a href="tel:${internalData.contact.phone}">${internalData.contact.phone}</a><br>
+                📧 Email: <a href="mailto:${internalData.contact.email}">${internalData.contact.email}</a><br>
+                🔗 <a href="${internalData.contact.linkedin}" target="_blank">LinkedIn Profile</a>`;
+    }
+
+    // Education
+    if (input.includes('education') || input.includes('degree') || input.includes('be')) {
+        return `Sakthiselvan holds a <strong>${internalData.personal.education}</strong> degree.`;
+    }
+
+    // Basic Info / Bio
+    if (input.includes('who') || input.includes('about') || input.includes('sakthiselvan') || input.includes('hello') || input.includes('hi')) {
+        return `I am Sakthiselvan's personal AI assistant. ${internalData.personal.bio} How can I help you regarding his career and projects?`;
+    }
+
+    // Out of Scope
+    return "That information is not available in my internal data.";
+}
